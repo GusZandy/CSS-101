@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        body {
+            margin: 0px;
+            background-color: #1B2430;
+
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 1.5rem;
+            font-weight: 500;
+        }
+
+        /* In Container, We define grid display with 3x2 grid cell like this:
+            |...    |...    |...    |
+            |...    |...    |...    | 
+           But in this chapter isn't like before. In this chapter, we use name of grid line 
+           to define of grid area instead of name of grid cell.
+           Size of each cell is 1fr (fraction). fr means portion of the remaining space.
+        */
+
+        .container {
+            /* Define that this container's display is grid*/
+            display: grid;
+
+            /* Define names of grid lines and their sizes. 
+              row2 =====> |================|===============|===============|
+                          | <---1fr--->    | <---1fr--->   | <---1fr--->   |               =============> grid lines with their size 
+              row2 =====> |================|===============|===============|
+                          | <= column1     | <= column2    | <= column2    | <= column3    =============> grid columns' names
+              row2 =====> |================|===============|===============|
+            */
+            grid-template-columns: [column1] 1fr [column2] 1fr [column3] 1fr [column4];
+
+            /* Define names of grid lines and their sizes for template of row:
+              ___   ======> row1 (a name of this grid line)
+              1fr   ======> size of this row (1fr)
+              ___   ======> row2 (a name of this grid line)
+              1fr   ======> size of this row (1fr)
+              ___   ======> row3 (a name of this grid line)
+            */
+            grid-template-rows: [row1] 1fr [row2] 1fr [row3];
+        }
+
+        .child {
+            
+        }
+
+        .one {
+            /* Define this item's area which is from column1 to column4 (for the column) and
+               from row1 ato row 2 (for the row). Like this:
+               column1          column4
+               ||                   ||
+              VVVV                 VVVV
+               |======================| <====== row1
+               |======== item ========|
+               |========= One ========|
+               |======================| <====== row2
+             
+            */
+            grid-column: column1 / column4;
+            grid-row: row1 / row2;
+            background-color: #51557E;
+        }
+
+        .two {
+           /* Define this item's area which is from column1 to column2 (for the column) and
+               from row2 ato row 3 (for the row). Like this:
+               column1          column2
+               ||                   ||
+              VVVV                 VVVV
+               |======================| <====== row2
+               |======== item ========|
+               |========= One ========|
+               |======================| <====== row3
+             
+            */
+            grid-column: column1 / column2;
+            grid-row: row2 / row3;
+            background-color: #816797;
+        }
+
+        .three {
+            /* Define this item's area which is from column2 to column3 (for the column) and
+               from row2 ato row 3 (for the row). Like this:
+               column2          column3
+               ||                   ||
+              VVVV                 VVVV
+               |======================| <====== row2
+               |======== item ========|
+               |========= One ========|
+               |======================| <====== row3
+             
+            */
+            grid-column: column2 / column3;
+            grid-row: row2 / row3;
+            background-color: #A75D5D;
+        }
+
+        .four {
+           /* Define this item's area which is from column3 to column4 (for the column) and
+               from row2 ato row 3 (for the row). Like this:
+               column3          column4
+               ||                   ||
+              VVVV                 VVVV
+               |======================| <====== row2
+               |======== item ========|
+               |========= One ========|
+               |======================| <====== row3
+             
+            */
+            grid-column: column3 / column4;
+            grid-row: row2 / row3;
+            background-color: #FFC6D3;
+        }
+    </style>
+
+    <title>1 | Grid Column and Row </title>
+</head>
+<body>
+    <div class="container">
+        <div class="child one">1</div>
+        <div class="child two">2</div>
+        <div class="child three">3</div>
+        <div class="child four">4</div>
+    </div>
+</body>
+</html>
