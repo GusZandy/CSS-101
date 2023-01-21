@@ -28,11 +28,11 @@
             display: grid;
 
             /* Define names of grid lines and their sizes. 
-              row2 =====> |================|===============|===============|
+              row1 =====> |================|===============|===============|
                           | <---1fr--->    | <---1fr--->   | <---1fr--->   |               =============> grid lines with their size 
               row2 =====> |================|===============|===============|
                           | <= column1     | <= column2    | <= column2    | <= column3    =============> grid columns' names
-              row2 =====> |================|===============|===============|
+              row3 =====> |================|===============|===============|
             */
             grid-template-columns: [column1] 1fr [column2] 1fr [column3] 1fr [column4];
 
@@ -51,7 +51,7 @@
         }
 
         .one {
-            /* Define this item's area which is from column1 to column4 (for the column) and
+            /* Define this item's area shortly (with shorthand) which is from column1 to column4 (for the column) and
                from row1 ato row 2 (for the row). Like this:
                column1          column4
                ||                   ||
@@ -62,13 +62,19 @@
                |======================| <====== row2
              
             */
+            grid-area: row1 / column1 / row2 / column4;
+
+            /* Equal this:
             grid-column: column1 / column4;
-            grid-row: row1 / row2;
+            grid-row: row1 / row2; 
+            */
+
+
             background-color: #51557E;
         }
 
         .two {
-           /* Define this item's area which is from column1 to column2 (for the column) and
+           /* Define this item's area shortly (with shorthand) which is from column1 to column2 (for the column) and
                from row2 ato row 3 (for the row). Like this:
                column1          column2
                ||                   ||
@@ -79,13 +85,18 @@
                |======================| <====== row3
              
             */
+
+            grid-area: row2 / column1 / row3 / column2;
+            /* Equal this:
             grid-column: column1 / column2;
-            grid-row: row2 / row3;
+            grid-row: row2 / row3; 
+            */
+
             background-color: #816797;
         }
 
         .three {
-            /* Define this item's area which is from column2 to column3 (for the column) and
+            /* Define this item's area shortly (with shorthand) which is from column2 to column3 (for the column) and
                from row2 ato row 3 (for the row). Like this:
                column2          column3
                ||                   ||
@@ -96,13 +107,20 @@
                |======================| <====== row3
              
             */
+
+            grid-area: row2 / column2 / row3 / column3;
+
+            /* 
+            Equal this:
             grid-column: column2 / column3;
-            grid-row: row2 / row3;
+            grid-row: row2 / row3; 
+            */
+
             background-color: #A75D5D;
         }
 
         .four {
-           /* Define this item's area which is from column3 to column4 (for the column) and
+           /* Define this item's area shortly (with shorthand) which is from column3 to column4 (for the column) and
                from row2 ato row 3 (for the row). Like this:
                column3          column4
                ||                   ||
@@ -113,13 +131,20 @@
                |======================| <====== row3
              
             */
+
+            grid-area: row2 / column3 / row3 / column4;
+
+
+            /* Equal this:
             grid-column: column3 / column4;
-            grid-row: row2 / row3;
+            grid-row: row2 / row3; 
+            */
+
             background-color: #FFC6D3;
         }
     </style>
 
-    <title>2 | Grid Column and Row </title>
+    <title>4 | Grid Column and Row (Shorthand)</title>
 </head>
 <body>
     <div class="container">

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        body {
+            margin: 0px;
+            background-color: #1B2430;
+
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 1.5rem;
+            font-weight: 500;
+        }
+
+        /* In Container, We define grid display with 3x2 grid cell shortly (with shorthand) like this:
+            |one    |two    |three  |
+            |four   |five   |six    |  
+           In the other hands, grid display with 3 columns and 2 rows with its area's name.
+           Size of each cell is 1fr (fraction). fr means portion of the remaining space.
+        */
+
+        .container {
+            display: grid;
+            grid-template: 
+                "one two three" 1fr
+                "four five six" 1fr
+                / 1fr 1fr 1fr;
+        }
+
+        .child {
+            
+        }
+
+        .one {
+            grid-area: one;
+            background-color: #51557E;
+        }
+
+        .two {
+            grid-area: two;
+            background-color: #816797;
+        }
+
+        .three {
+            grid-area: three;
+            background-color: #A75D5D;
+        }
+
+        .four {
+            grid-area: four;
+            background-color: #FFC6D3;
+        }
+
+        .five {
+            grid-area: five;
+            background-color: #FEA1BF;
+        }
+
+        .six {
+            grid-area: six;
+            background-color: #D0B8A8;
+        }
+    </style>
+
+    <title>3 | Init Grid Display Shorthand 1</title>
+</head>
+<body>
+    <div class="container">
+        <div class="child one">1</div>
+        <div class="child two">2</div>
+        <div class="child three">3</div>
+        <div class="child four">4</div>
+        <div class="child five">5</div>
+        <div class="child six">6</div>
+    </div>
+</body>
+</html>
